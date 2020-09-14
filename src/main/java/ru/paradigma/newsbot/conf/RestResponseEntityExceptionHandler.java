@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.paradigma.newsbot.exception.TokenNotFoundException;
 import ru.paradigma.newsbot.exception.UserAlreadyRegisteredException;
 import ru.paradigma.newsbot.exception.UserNotFoundException;
 
@@ -15,7 +14,7 @@ import ru.paradigma.newsbot.exception.UserNotFoundException;
 public class RestResponseEntityExceptionHandler
         extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value
-            = {TokenNotFoundException.class, UserAlreadyRegisteredException.class, UserNotFoundException.class})
+            = { UserAlreadyRegisteredException.class, UserNotFoundException.class})
     protected ResponseEntity<Object> handleConflict(
             RuntimeException ex, WebRequest request) {
         final var bodyOfResponse = ex.getLocalizedMessage();
