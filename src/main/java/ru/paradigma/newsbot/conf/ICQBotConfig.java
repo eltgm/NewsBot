@@ -5,11 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.mail.im.botapi.BotApiClient;
 import ru.mail.im.botapi.BotApiClientController;
-import ru.mail.im.botapi.api.Chats;
-import ru.mail.im.botapi.fetcher.OnEventFetchListener;
-import ru.mail.im.botapi.fetcher.event.Event;
-
-import java.util.List;
 
 @Configuration
 public class ICQBotConfig {

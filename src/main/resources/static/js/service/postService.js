@@ -2,13 +2,16 @@
 
 let postServiceFn = function ($http) {
     this.sendNews = function (news) {
-        let data = new FormData();
-        data.append("text", news.text)
-        for (let i in news.photos) {
-            data.append("uploadFile[" + i + "]", news.photos[i]);
+        let payload = new FormData();
+        payload.append("text", news.text);
+
+        if (news.photos !== undefined) {
+            Array.from(news.photos).forEach(function (item) {
+                payload.append("photos", item);
+            });
         }
 
-        $http.post("http://localhost:8080/api/news", data, {
+        $http.post("http://localhost:8080/api/news", payload, {
             headers: {'Content-Type': undefined}
         });
     };

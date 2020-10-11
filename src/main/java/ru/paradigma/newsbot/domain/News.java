@@ -1,13 +1,9 @@
 package ru.paradigma.newsbot.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.File;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +16,8 @@ public class News {
     @Id
     private String id;
     private String text;
-    private List<File> photos;
+    private List<Photo> photos;
     private Date date;
+    @With
+    private String messenger;
 }

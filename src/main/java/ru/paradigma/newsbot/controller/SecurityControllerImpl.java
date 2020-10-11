@@ -1,7 +1,6 @@
 package ru.paradigma.newsbot.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.paradigma.newsbot.domain.NewsUser;
